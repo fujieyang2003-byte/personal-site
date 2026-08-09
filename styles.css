@@ -286,8 +286,13 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 .contact-list a { color: var(--text); text-decoration: none; }
 .contact-list a:hover { color: var(--accent); }
 
-/* 联系我：总结 + 优势 + 欢迎标签 */
-.contact-wrap { max-width: 760px; margin: 0 auto; }
+/* 联系我：两栏（左内容 / 右生活照） */
+.contact-wrap {
+  max-width: 1040px; margin: 0 auto;
+  display: grid; grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 48px; align-items: center;
+}
+.contact-main { min-width: 0; }
 .contact-summary { font-size: 17px; line-height: 1.85; text-align: left; }
 .contact-summary b { color: var(--accent); }
 .contact-strengths {
@@ -317,36 +322,31 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
   color: #fff; background: var(--accent); border-color: var(--accent);
 }
 
+/* 联系我右侧生活照 */
+.contact-photo { margin: 0; text-align: center; }
+.contact-photo__img {
+  width: 100%; aspect-ratio: 3 / 4;
+  object-fit: cover; object-position: center 18%;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 52px color-mix(in srgb, var(--accent) 14%, var(--shadow));
+  transition: transform .35s cubic-bezier(0.32, 0.72, 0, 1), box-shadow .35s;
+}
+.contact-photo__img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 64px color-mix(in srgb, var(--accent) 20%, var(--shadow));
+}
+.contact-photo__cap {
+  margin-top: 14px; color: var(--text-soft); font-size: 13.5px; letter-spacing: 1px;
+}
+
+@media (max-width: 820px) {
+  .contact-wrap { grid-template-columns: 1fr; gap: 32px; }
+  .contact-photo { max-width: 300px; margin: 0 auto; }
+}
 @media (max-width: 680px) {
   .contact-strengths { grid-template-columns: 1fr; }
   .hero__avatar-img { width: 96px; height: 96px; }
-  .life-photo__img { border-radius: 18px; }
-}
-
-/* ---------- 生活照 ---------- */
-.life-photo {
-  display: flex; justify-content: center;
-  padding: 64px 24px 24px;
-}
-.life-photo__wrap {
-  position: relative;
-  max-width: 520px; width: 100%;
-  text-align: center;
-}
-.life-photo__img {
-  width: 100%; aspect-ratio: 3 / 4;
-  object-fit: cover; object-position: center 20%;
-  border-radius: 24px;
-  border: 1px solid var(--border);
-  box-shadow: 0 24px 60px color-mix(in srgb, var(--accent) 12%, var(--shadow));
-  transition: transform .35s cubic-bezier(0.32, 0.72, 0, 1), box-shadow .35s;
-}
-.life-photo__img:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 32px 72px color-mix(in srgb, var(--accent) 18%, var(--shadow));
-}
-.life-photo__caption {
-  margin-top: 16px; color: var(--text-soft); font-size: 14px; letter-spacing: 1px;
 }
 
 /* ---------- 页脚 ---------- */
