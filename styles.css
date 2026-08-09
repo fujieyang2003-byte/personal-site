@@ -5,49 +5,18 @@
    ============================================================ */
 
 :root {
-  --bg: #ffffff;
-  --bg-soft: #f6f7f9;
-  --text: #1a1a1e;
-  --text-soft: #5b5e66;
-  --border: #e6e8eb;
-  --accent: #6366f1;        /* 主色：靛蓝 */
-  --accent-soft: #eef0ff;
-  --radius: 14px;
-  --maxw: 880px;
-  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-          "Microsoft YaHei", "Hiragino Sans GB", system-ui, sans-serif;
-}
-
-/* 深色模式：跟随系统（data-theme="auto" 时） */
-@media (prefers-color-scheme: dark) {
-  html[data-theme="auto"] {
-    --bg: #0e0f13;
-    --bg-soft: #16181d;
-    --text: #f2f3f5;
-    --text-soft: #a0a3ab;
-    --border: #26282f;
-    --accent: #818cf8;
-    --accent-soft: #1e2030;
-  }
-}
-/* 手动深 / 亮色（覆盖系统） */
-html[data-theme="dark"] {
+  /* 固定深色主题（移除亮色切换，默认深色） */
   --bg: #0e0f13;
   --bg-soft: #16181d;
   --text: #f2f3f5;
   --text-soft: #a0a3ab;
   --border: #26282f;
-  --accent: #818cf8;
+  --accent: #818cf8;        /* 主色：靛蓝（深色） */
   --accent-soft: #1e2030;
-}
-html[data-theme="light"] {
-  --bg: #ffffff;
-  --bg-soft: #f6f7f9;
-  --text: #1a1a1e;
-  --text-soft: #5b5e66;
-  --border: #e6e8eb;
-  --accent: #6366f1;
-  --accent-soft: #eef0ff;
+  --radius: 14px;
+  --maxw: 880px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+          "Microsoft YaHei", "Hiragino Sans GB", system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -96,15 +65,29 @@ code {
   margin-left: 20px; font-size: 14px; transition: color .2s;
 }
 .nav__links a:hover { color: var(--accent); }
-.theme-toggle {
+.lang-toggle {
   margin-left: 16px;
-  background: none; border: 1px solid var(--border);
-  border-radius: 999px; width: 36px; height: 36px;
-  cursor: pointer; font-size: 15px; color: var(--text);
-  display: flex; align-items: center; justify-content: center;
-  transition: border-color .2s;
+  display: flex; align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px; overflow: hidden;
+  font-size: 13px;
 }
-.theme-toggle:hover { border-color: var(--accent); }
+.lang-toggle button {
+  background: none; border: none; cursor: pointer;
+  color: var(--text-soft); padding: 7px 13px;
+  font-size: 13px; transition: color .2s, background .2s;
+  font-family: var(--font);
+}
+.lang-toggle button.is-active {
+  color: #fff; background: var(--accent);
+}
+.lang-toggle button:hover { color: var(--accent); }
+.lang-toggle button.is-active:hover { color: #fff; }
+
+@media (max-width: 560px) {
+  .lang-toggle { margin-left: 10px; }
+  .lang-toggle button { padding: 6px 10px; }
+}
 
 /* ---------- 布局容器 ---------- */
 main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }

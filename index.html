@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="auto">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,18 +14,21 @@
 
   <!-- ============ 顶部导航 ============ -->
   <header class="nav">
-    <a class="nav__brand" href="#top">杨富杰</a>
+    <a class="nav__brand" href="#top" data-i18n="nav.brand">杨富杰</a>
     <nav class="nav__links">
-      <a href="#about">关于</a>
-      <a href="#experience">经历</a>
-      <a href="#ai-agent">AI Agent</a>
-      <a href="#projects">自动化</a>
-      <a href="#education">教育</a>
-      <a href="#research">科研</a>
-      <a href="#skills">技能</a>
-      <a href="#contact">联系</a>
+      <a href="#about" data-i18n="nav.about">关于</a>
+      <a href="#experience" data-i18n="nav.experience">经历</a>
+      <a href="#ai-agent" data-i18n="nav.aiAgent">AI Agent</a>
+      <a href="#projects" data-i18n="nav.projects">自动化</a>
+      <a href="#education" data-i18n="nav.education">教育</a>
+      <a href="#research" data-i18n="nav.research">科研</a>
+      <a href="#skills" data-i18n="nav.skills">技能</a>
+      <a href="#contact" data-i18n="nav.contact">联系</a>
     </nav>
-    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
+    <div class="lang-toggle" id="langToggle">
+      <button type="button" data-lang="zh" class="is-active">中</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
   </header>
 
   <main id="top">
@@ -34,29 +37,29 @@
       <div class="hero__avatar">
         <img src="assets/avatar.jpg" alt="杨富杰头像" class="hero__avatar-img" />
       </div>
-      <p class="hero__eyebrow">你好，我是</p>
-      <h1 class="hero__name">杨富杰</h1>
-      <p class="hero__title">管理科学与工程硕士 · 广告策略运营 / 数据分析</p>
-      <p class="hero__tagline">
+      <p class="hero__eyebrow" data-i18n="hero.eyebrow">你好，我是</p>
+      <h1 class="hero__name" data-i18n="hero.name">杨富杰</h1>
+      <p class="hero__title" data-i18n="hero.title">管理科学与工程硕士 · 广告策略运营 / 数据分析</p>
+      <p class="hero__tagline" data-i18n="hero.tagline">
         北京理工大学（保研）硕士，现于美团核心本地商业从事下沉市场广告策略运营。
         擅长用 SQL / Python 做数据分析、把业务拆成可量化指标，并探索 LLM Agent 在广告业务中的落地。
       </p>
       <div class="hero__actions">
-        <a class="btn btn--primary" href="#experience">查看经历</a>
-        <a class="btn btn--ghost" href="#ai-agent">AI Agent 搭建</a>
+        <a class="btn btn--primary" href="#experience" data-i18n="hero.btnExperience">查看经历</a>
+        <a class="btn btn--ghost" href="#ai-agent" data-i18n="hero.btnAgent">AI Agent 搭建</a>
       </div>
       <div class="hero__social">
         <a href="mailto:bit_yfj@163.com">Email</a>
         <a href="https://github.com/fujieyang2003-byte" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
-      <p class="scroll-hint">向下滚动，或切换视角深度了解 ↓</p>
+      <p class="scroll-hint" data-i18n="hero.scrollHint">向下滚动，或切换视角深度了解 ↓</p>
     </section>
 
     <!-- ============ 关于 ============ -->
     <section id="about" class="section reveal">
-      <h2 class="section__title">关于我</h2>
-      <p class="section__lead">点击星球，解锁我的能力雷达与 AI 简历摘要。</p>
+      <h2 class="section__title" data-i18n="about.title">关于我</h2>
+      <p class="section__lead" data-i18n="about.lead">点击星球，解锁我的能力雷达与 AI 简历摘要。</p>
 
       <!-- 探索前：星球 -->
       <div class="explore" id="explore">
@@ -64,18 +67,18 @@
           <div class="planet"></div>
           <button class="explore-core" id="exploreBtn" aria-label="开启探索">
             <span class="explore-core__pulse"></span>
-            开启探索
+            <span data-i18n="explore.btn">开启探索</span>
           </button>
         </div>
-        <p class="explore-hint">点击中心，开始探索我的能力 ↓</p>
+        <p class="explore-hint" data-i18n="explore.hint">点击中心，开始探索我的能力 ↓</p>
       </div>
 
       <!-- 探索后：能力雷达 + AI 摘要 -->
       <div class="radar-wrap" id="radarWrap">
         <div class="radar-svg" id="radarSvg"></div>
         <div class="cap-legend" id="capLegend"></div>
-        <p class="radar-note">六维能力基于项目产出与业务结果自评，点击生成 AI 摘要 ↓</p>
-        <button class="gen-summary" id="genSummary">✨ 生成我的简历摘要</button>
+        <p class="radar-note" data-i18n="about.radarNote">六维能力基于项目产出与业务结果自评，点击生成 AI 摘要 ↓</p>
+        <button class="gen-summary" id="genSummary" data-i18n="about.genSummary">✨ 生成我的简历摘要</button>
         <div class="summary-box" id="summaryBox" hidden>
           <span class="summary-text" id="summaryText"></span><span class="cursor" id="summaryCursor"></span>
         </div>
@@ -84,7 +87,7 @@
 
     <!-- ============ 工作经历（美团为主，带视角切换 + 深耕） ============ -->
     <section id="experience" class="section reveal">
-      <h2 class="section__title">工作经历</h2>
+      <h2 class="section__title" data-i18n="exp.title">工作经历</h2>
 
       <!-- 美团子板块 -->
       <div class="company-block" id="meituan">
@@ -98,12 +101,12 @@
 
         <!-- 视角切换器 -->
         <div class="view-switch" role="tablist" aria-label="观察视角">
-          <button class="view-btn is-active" data-view="recruiter">招聘者视角</button>
-          <button class="view-btn" data-view="product">产品运营</button>
-          <button class="view-btn" data-view="tech">技术伙伴</button>
-          <button class="view-btn" data-view="roamer">漫游者</button>
+          <button class="view-btn is-active" data-view="recruiter" data-i18n="view.recruiter">招聘者视角</button>
+          <button class="view-btn" data-view="product" data-i18n="view.product">产品运营</button>
+          <button class="view-btn" data-view="tech" data-i18n="view.tech">技术伙伴</button>
+          <button class="view-btn" data-view="roamer" data-i18n="view.roamer">漫游者</button>
         </div>
-        <p class="view-hint">同一个美团经历，切换视角看不同深度的内容 →</p>
+        <p class="view-hint" data-i18n="view.hint">同一个美团经历，切换视角看不同深度的内容 →</p>
 
         <!-- 项目卡片列表 -->
         <div class="projects">
@@ -111,35 +114,35 @@
           <!-- 项目1：外卖广告策略 -->
           <article class="project-card" data-project="waimai">
             <header class="project-card__head">
-              <h4 class="project-card__title">下沉市场外卖广告策略</h4>
+              <h4 class="project-card__title" data-i18n="p.waimai.title">下沉市场外卖广告策略</h4>
               <button class="expand-btn" aria-expanded="false">深入了解 ↕</button>
             </header>
 
             <div class="view-pane" data-pane="recruiter">
-              <p><strong>看结果：</strong>7 月上线「随单返 + 点金自动投放」，当月<strong>渗透率提升 12%</strong>、<strong>收入增长 8.6%</strong>；
+              <p data-i18n="p.waimai.recruiter"><strong>看结果：</strong>7 月上线「随单返 + 点金自动投放」，当月<strong>渗透率提升 12%</strong>、<strong>收入增长 8.6%</strong>；
               策略覆盖新签激活 / 存量提收 / 流失召回全阶段，直接拉动广告现金收入与货币化率。</p>
             </div>
             <div class="view-pane" data-pane="product" hidden>
-              <p><strong>看策略：</strong>按商户生命周期分三阶段运营——新签激活用<em>冷启动</em>策略，
+              <p data-i18n="p.waimai.product"><strong>看策略：</strong>按商户生命周期分三阶段运营——新签激活用<em>冷启动</em>策略，
               存量提收用<em>渗透率 / ARPU 分层</em>，流失召回用<em>流失预警</em>方案；
               落地的广告产品为点金推广 / 铂金推广 / 一站式推广。</p>
             </div>
             <div class="view-pane" data-pane="tech" hidden>
-              <p><strong>看系统：</strong>基于 MTD 收入、货币化率 <code>MR = 收入 ÷ 实付验证GTV</code>、
+              <p data-i18n="p.waimai.tech"><strong>看系统：</strong>基于 MTD 收入、货币化率 <code>MR = 收入 ÷ 实付验证GTV</code>、
               ARPU、渗透率搭建监控体系；SQL + Python 定时拉取，异常自动告警，支撑周报与月度复盘。</p>
             </div>
             <div class="view-pane" data-pane="roamer" hidden>
-              <p><strong>看故事：</strong>从接入下沉市场外卖广告起步，先摸清新签 / 存量 / 流失的结构，
+              <p data-i18n="p.waimai.roamer"><strong>看故事：</strong>从接入下沉市场外卖广告起步，先摸清新签 / 存量 / 流失的结构，
               再分阶段落地策略，7 月产品上线拿到结果，形成可复制的运营打法。</p>
             </div>
 
             <div class="project-detail" hidden>
-              <h5>深耕细节（结合美团广告体系）</h5>
+              <h5 data-i18n="p.waimai.detailH">深耕细节（结合美团广告体系）</h5>
               <ul>
-                <li><strong>广告产品矩阵：</strong>点金推广（按点击付费、基础展位）、铂金推广（更高优先级展位）、一站式推广（智能托管），按商户分层匹配。</li>
-                <li><strong>核心指标：</strong>广告现金收入、实付验证 GTV（验券成功 GTV）、货币化率 MR、ARPU、渗透率；监控 MTD 收入 YoY / MoM 与 MR 的 YoY / MoM。</li>
-                <li><strong>商户分层：</strong>KA / CKA / 城商差异化运营，合作商管理设月度目标与货币化率目标。</li>
-                <li><strong>特殊分析：</strong>旅游城市 vs 非旅游城市外卖 / 到餐偏离大盘，需单独建模。</li>
+                <li data-i18n="p.waimai.li1"><strong>广告产品矩阵：</strong>点金推广（按点击付费、基础展位）、铂金推广（更高优先级展位）、一站式推广（智能托管），按商户分层匹配。</li>
+                <li data-i18n="p.waimai.li2"><strong>核心指标：</strong>广告现金收入、实付验证 GTV（验券成功 GTV）、货币化率 MR、ARPU、渗透率；监控 MTD 收入 YoY / MoM 与 MR 的 YoY / MoM。</li>
+                <li data-i18n="p.waimai.li3"><strong>商户分层：</strong>KA / CKA / 城商差异化运营，合作商管理设月度目标与货币化率目标。</li>
+                <li data-i18n="p.waimai.li4"><strong>特殊分析：</strong>旅游城市 vs 非旅游城市外卖 / 到餐偏离大盘，需单独建模。</li>
               </ul>
             </div>
           </article>
@@ -147,33 +150,33 @@
           <!-- 项目2：闪购广告 -->
           <article class="project-card" data-project="shangou">
             <header class="project-card__head">
-              <h4 class="project-card__title">闪购广告产品运营（负责人）</h4>
+              <h4 class="project-card__title" data-i18n="p.shangou.title">闪购广告产品运营（负责人）</h4>
               <button class="expand-btn" aria-expanded="false">深入了解 ↕</button>
             </header>
 
             <div class="view-pane" data-pane="recruiter">
-              <p><strong>看结果：</strong>H2 将 CPC 产品转向 OCPX 推广，运营计划<strong>收入提升 11%</strong>，
+              <p data-i18n="p.shangou.recruiter"><strong>看结果：</strong>H2 将 CPC 产品转向 OCPX 推广，运营计划<strong>收入提升 11%</strong>，
               试点产品<strong>首月渗透率达 8%</strong>，独立负责闪购商家线上广告全流程。</p>
             </div>
             <div class="view-pane" data-pane="product" hidden>
-              <p><strong>看策略：</strong>基于闪购品类定向，从 CPC 竞价转向 <em>OCPX（按转化出价）</em>，
+              <p data-i18n="p.shangou.product"><strong>看策略：</strong>基于闪购品类定向，从 CPC 竞价转向 <em>OCPX（按转化出价）</em>，
               完成产品迭代与运营试点，更贴合商户「要转化」而非「要曝光」的诉求。</p>
             </div>
             <div class="view-pane" data-pane="tech" hidden>
-              <p><strong>看系统：</strong>搭建闪购品类定向模型与 OCPX 出价逻辑，配套试点数据看板，
+              <p data-i18n="p.shangou.tech"><strong>看系统：</strong>搭建闪购品类定向模型与 OCPX 出价逻辑，配套试点数据看板，
               按品类 / 城市拆分渗透率与收入，定位高潜试点区域。</p>
             </div>
             <div class="view-pane" data-pane="roamer" hidden>
-              <p><strong>看故事：</strong>独立接手闪购商家线上广告，发现 CPC 效率瓶颈，
+              <p data-i18n="p.shangou.roamer"><strong>看故事：</strong>独立接手闪购商家线上广告，发现 CPC 效率瓶颈，
               推动产品从 CPC 转 OCPX，完成迭代并在 H2 拿到试点结果。</p>
             </div>
 
             <div class="project-detail" hidden>
-              <h5>深耕细节</h5>
+              <h5 data-i18n="p.shangou.detailH">深耕细节</h5>
               <ul>
-                <li><strong>CPC → OCPX：</strong>从按点击付费转向按转化（如下单 / 验券）出价，降低商户无效曝光成本。</li>
-                <li><strong>品类定向：</strong>闪购高频品类（如超市、鲜花、数码）差异化出价与创意。</li>
-                <li><strong>试点设计：</strong>小流量灰度 → 数据看板验证渗透率 / 收入 → 规模化复制。</li>
+                <li data-i18n="p.shangou.li1"><strong>CPC → OCPX：</strong>从按点击付费转向按转化（如下单 / 验券）出价，降低商户无效曝光成本。</li>
+                <li data-i18n="p.shangou.li2"><strong>品类定向：</strong>闪购高频品类（如超市、鲜花、数码）差异化出价与创意。</li>
+                <li data-i18n="p.shangou.li3"><strong>试点设计：</strong>小流量灰度 → 数据看板验证渗透率 / 收入 → 规模化复制。</li>
               </ul>
             </div>
           </article>
@@ -181,33 +184,33 @@
           <!-- 项目3：GEO 商业化 -->
           <article class="project-card" data-project="geo">
             <header class="project-card__head">
-              <h4 class="project-card__title">GEO 广告产品商业化（从 0 到 1）</h4>
+              <h4 class="project-card__title" data-i18n="p.geo.title">GEO 广告产品商业化（从 0 到 1）</h4>
               <button class="expand-btn" aria-expanded="false">深入了解 ↕</button>
             </header>
 
             <div class="view-pane" data-pane="recruiter">
-              <p><strong>看结果：</strong>从 0 设计 GEO 广告商业化方案，已累计<strong>潜在客户收入超 1000 万元</strong>，
+              <p data-i18n="p.geo.recruiter"><strong>看结果：</strong>从 0 设计 GEO 广告商业化方案，已累计<strong>潜在客户收入超 1000 万元</strong>，
               形成可落地的产品组合与定价。</p>
             </div>
             <div class="view-pane" data-pane="product" hidden>
-              <p><strong>看策略：</strong>完成国内外 GEO 产品定价对标，基于美团本地商业优势定义<em>产品组合与定价阶梯</em>，
+              <p data-i18n="p.geo.product"><strong>看策略：</strong>完成国内外 GEO 产品定价对标，基于美团本地商业优势定义<em>产品组合与定价阶梯</em>，
               匹配 KA / CKA / 城商不同支付能力。</p>
             </div>
             <div class="view-pane" data-pane="tech" hidden>
-              <p><strong>看系统：</strong>GEO 广告基于地理位置触达（到店 / 附近商户），定价模型结合商户层级与投放半径，
+              <p data-i18n="p.geo.tech"><strong>看系统：</strong>GEO 广告基于地理位置触达（到店 / 附近商户），定价模型结合商户层级与投放半径，
               与现有点金 / 铂金体系打通。</p>
             </div>
             <div class="view-pane" data-pane="roamer" hidden>
-              <p><strong>看故事：</strong>从空白起步，先做国内外对标摸清玩法，再定义自家产品组合与定价阶梯，
+              <p data-i18n="p.geo.roamer"><strong>看故事：</strong>从空白起步，先做国内外对标摸清玩法，再定义自家产品组合与定价阶梯，
               把本地商业优势翻译成可售卖的广告产品。</p>
             </div>
 
             <div class="project-detail" hidden>
-              <h5>深耕细节</h5>
+              <h5 data-i18n="p.geo.detailH">深耕细节</h5>
               <ul>
-                <li><strong>定价对标：</strong>对比国内外 GEO / LBS 广告产品（如到店宝、附近推）的计费与阶梯。</li>
-                <li><strong>产品组合：</strong>按商户投放目标（曝光 / 到店 / 转化）拆分套餐，匹配 KA / CKA / 城商预算。</li>
-                <li><strong>支付能力匹配：</strong>城商定基础包，CKA / KA 定增值包与专属服务。</li>
+                <li data-i18n="p.geo.li1"><strong>定价对标：</strong>对比国内外 GEO / LBS 广告产品（如到店宝、附近推）的计费与阶梯。</li>
+                <li data-i18n="p.geo.li2"><strong>产品组合：</strong>按商户投放目标（曝光 / 到店 / 转化）拆分套餐，匹配 KA / CKA / 城商预算。</li>
+                <li data-i18n="p.geo.li3"><strong>支付能力匹配：</strong>城商定基础包，CKA / KA 定增值包与专属服务。</li>
               </ul>
             </div>
           </article>
@@ -215,32 +218,32 @@
           <!-- 项目4：领航舱 -->
           <article class="project-card" data-project="bridge">
             <header class="project-card__head">
-              <h4 class="project-card__title">广告销售领航舱（生产力产品）</h4>
+              <h4 class="project-card__title" data-i18n="p.bridge.title">广告销售领航舱（生产力产品）</h4>
               <button class="expand-btn" aria-expanded="false">深入了解 ↕</button>
             </header>
 
             <div class="view-pane" data-pane="recruiter">
-              <p><strong>看结果：</strong>设计「总部—城市经理—销售执行台」三层产品架构，推动 AI 策略直达总部，
+              <p data-i18n="p.bridge.recruiter"><strong>看结果：</strong>设计「总部—城市经理—销售执行台」三层产品架构，推动 AI 策略直达总部，
               解决下沉市场合作商管理碎片化痛点。</p>
             </div>
             <div class="view-pane" data-pane="product" hidden>
-              <p><strong>看策略：</strong>明确各层级<em>数据权限与功能边界</em>，促成 AI 策略下发方案共识，
+              <p data-i18n="p.bridge.product"><strong>看策略：</strong>明确各层级<em>数据权限与功能边界</em>，促成 AI 策略下发方案共识，
               把单点汇报与运营转为直达总部的标准化流程。</p>
             </div>
             <div class="view-pane" data-pane="tech" hidden>
-              <p><strong>看系统：</strong>三层架构对应不同数据视图与操作权限；底层数据模型支撑总部看全局、城市看效率、销售看执行。</p>
+              <p data-i18n="p.bridge.tech"><strong>看系统：</strong>三层架构对应不同数据视图与操作权限；底层数据模型支撑总部看全局、城市看效率、销售看执行。</p>
             </div>
             <div class="view-pane" data-pane="roamer" hidden>
-              <p><strong>看故事：</strong>发现合作商管理碎片化、汇报链路长，于是设计三层架构，
+              <p data-i18n="p.bridge.roamer"><strong>看故事：</strong>发现合作商管理碎片化、汇报链路长，于是设计三层架构，
               让策略从总部一键下发，一线销售执行台直接承接。</p>
             </div>
 
             <div class="project-detail" hidden>
-              <h5>深耕细节</h5>
+              <h5 data-i18n="p.bridge.detailH">深耕细节</h5>
               <ul>
-                <li><strong>三层架构：</strong>总部（区域控全局）→ 城市经理（城市提效率）→ 销售执行台（BD 给策略）。</li>
-                <li><strong>权限边界：</strong>按层级开放对应数据粒度与操作功能，避免越权与口径混乱。</li>
-                <li><strong>AI 策略下发：</strong>总部侧生成策略，经城市经理拆解，推送到销售执行台执行并回流结果。</li>
+                <li data-i18n="p.bridge.li1"><strong>三层架构：</strong>总部（区域控全局）→ 城市经理（城市提效率）→ 销售执行台（BD 给策略）。</li>
+                <li data-i18n="p.bridge.li2"><strong>权限边界：</strong>按层级开放对应数据粒度与操作功能，避免越权与口径混乱。</li>
+                <li data-i18n="p.bridge.li3"><strong>AI 策略下发：</strong>总部侧生成策略，经城市经理拆解，推送到销售执行台执行并回流结果。</li>
               </ul>
             </div>
           </article>
@@ -253,10 +256,10 @@
         <li class="timeline__item">
           <div class="timeline__meta">
             <span class="timeline__date">2025.09 — 2025.12</span>
-            <span class="timeline__org">金山办公（WPS） · 营销管理中心</span>
+            <span class="timeline__org" data-i18n="wps.org">金山办公（WPS） · 营销管理中心</span>
           </div>
-          <h3 class="timeline__role">数据策略运营</h3>
-          <p class="timeline__desc">
+          <h3 class="timeline__role" data-i18n="wps.role">数据策略运营</h3>
+          <p class="timeline__desc" data-i18n="wps.desc">
             <strong>医疗行业研究：</strong>独立负责 2026 医疗行业办公软件市场复盘与预测，构建「省份 - 行业价值分层模型」。<br />
             <strong>市场分析：</strong>主导 B / G 端年度业绩保守与冲刺预测，完成三年 B 端市场规模增长率及竞品份额测算。<br />
             <strong>周期数据监控：</strong>在 CRM 搭建周 / 月 / 季营销数据跟踪体系，实习期间发现超 100 万元大额数据异常值 45 条。
@@ -265,10 +268,10 @@
         <li class="timeline__item">
           <div class="timeline__meta">
             <span class="timeline__date">2024.10 — 2025.02</span>
-            <span class="timeline__org">水滴科技集团 · IT 内控</span>
+            <span class="timeline__org" data-i18n="shuidi.org">水滴科技集团 · IT 内控</span>
           </div>
-          <h3 class="timeline__role">财务数据分析</h3>
-          <p class="timeline__desc">
+          <h3 class="timeline__role" data-i18n="shuidi.role">财务数据分析</h3>
+          <p class="timeline__desc" data-i18n="shuidi.desc">
             配合德勤完成美股财务年审，处理「水滴筹」「水滴保」2024 年亿级数据；
             用 SQL 提取分时段投保信息与 300+ 条异常记录，结合业务规则分类归因，
             识别 6 个高增长时段与 4 项风险点，支撑 2025 年业务策略调整。
@@ -281,8 +284,8 @@
     <section id="ai-agent" class="section reveal">
       <div class="aiagent__header">
         <div>
-          <h2 class="section__title" style="margin-bottom:6px">AI Agent 搭建</h2>
-          <p class="section__lead" style="margin:0; max-width:520px">
+          <h2 class="section__title" style="margin-bottom:6px" data-i18n="agent.title">AI Agent 搭建</h2>
+          <p class="section__lead" style="margin:0; max-width:520px" data-i18n="agent.lead">
             把合作商广告业务流程抽象成「数据采集 → 经营诊断 → 策略推荐 → 执行反馈」的 AI 闭环，
             用 LLM Agent 编排实现 L2 AI 化流程。
           </p>
@@ -335,28 +338,28 @@
             <div class="loop-node__ring"></div>
             <div class="loop-node__core">
               <span class="loop-node__num">01</span>
-              <span class="loop-node__name">数据采集</span>
+              <span class="loop-node__name" data-i18n="agent.node1">数据采集</span>
             </div>
           </div>
           <div class="loop-node" data-step="1">
             <div class="loop-node__ring"></div>
             <div class="loop-node__core">
               <span class="loop-node__num">02</span>
-              <span class="loop-node__name">经营诊断</span>
+              <span class="loop-node__name" data-i18n="agent.node2">经营诊断</span>
             </div>
           </div>
           <div class="loop-node" data-step="2">
             <div class="loop-node__ring"></div>
             <div class="loop-node__core">
               <span class="loop-node__num">03</span>
-              <span class="loop-node__name">策略推荐</span>
+              <span class="loop-node__name" data-i18n="agent.node3">策略推荐</span>
             </div>
           </div>
           <div class="loop-node" data-step="3">
             <div class="loop-node__ring"></div>
             <div class="loop-node__core">
               <span class="loop-node__num">04</span>
-              <span class="loop-node__name">执行反馈</span>
+              <span class="loop-node__name" data-i18n="agent.node4">执行反馈</span>
             </div>
           </div>
         </div>
@@ -365,7 +368,7 @@
       <!-- 数据指标 -->
       <div class="agent-metrics">
         <div class="metric-card">
-          <span class="metric-card__label">任务效率</span>
+          <span class="metric-card__label" data-i18n="agent.m1label">任务效率</span>
           <div class="metric-card__bars" aria-hidden="true">
             <span class="bar bar--before" style="height:18%"></span>
             <span class="bar bar--after" style="height:95%"></span>
@@ -375,10 +378,10 @@
             <span class="metric-card__arrow">→</span>
             <span class="metric-card__to" data-text-to="1min">1min</span>
           </div>
-          <p class="metric-card__note">从人工逐级下达与分析，到 Agent 一分钟全览</p>
+          <p class="metric-card__note" data-i18n="agent.m1note">从人工逐级下达与分析，到 Agent 一分钟全览</p>
         </div>
         <div class="metric-card">
-          <span class="metric-card__label">正确率</span>
+          <span class="metric-card__label" data-i18n="agent.m2label">正确率</span>
           <div class="metric-card__bars" aria-hidden="true">
             <span class="bar bar--before" style="height:72%"></span>
             <span class="bar bar--after" style="height:95%"></span>
@@ -388,50 +391,50 @@
             <span class="metric-card__arrow">→</span>
             <span class="metric-card__to" data-target="95">95%</span>
           </div>
-          <p class="metric-card__note">策略诊断与广告产品推荐的准确性提升</p>
+          <p class="metric-card__note" data-i18n="agent.m2note">策略诊断与广告产品推荐的准确性提升</p>
         </div>
         <div class="metric-card metric-card--wide">
-          <span class="metric-card__label">覆盖下沉城市合作商</span>
+          <span class="metric-card__label" data-i18n="agent.m3label">覆盖下沉城市合作商</span>
           <div class="metric-card__big" data-target="1064">0</div>
-          <p class="metric-card__note">真实业务场景回流数据，支撑策略迭代</p>
+          <p class="metric-card__note" data-i18n="agent.m3note">真实业务场景回流数据，支撑策略迭代</p>
         </div>
       </div>
 
       <!-- 三层架构：折叠为补充信息 -->
-      <h3 class="block-subtitle" style="margin-top:42px">三层产品架构（点击展开）</h3>
+      <h3 class="block-subtitle" style="margin-top:42px" data-i18n="agent.archSubtitle">三层产品架构（点击展开）</h3>
       <div class="agent-arch">
         <div class="arch-layer" data-layer="hq">
           <div class="arch-layer__head">
-            <span class="arch-layer__name">总部</span>
-            <span class="arch-layer__tag">区域控全局</span>
+            <span class="arch-layer__name" data-i18n="agent.archHQname">总部</span>
+            <span class="arch-layer__tag" data-i18n="agent.archHQtag">区域控全局</span>
             <button class="expand-btn" aria-expanded="false">+</button>
           </div>
           <div class="layer-detail" hidden>
-            <p>总部视角掌控全域经营大盘：监控各区域 MTD 收入、货币化率 MR、渗透率与 ARPU 的 YoY / MoM；
+            <p data-i18n="agent.archHQdesc">总部视角掌控全域经营大盘：监控各区域 MTD 收入、货币化率 MR、渗透率与 ARPU 的 YoY / MoM；
             生成 AI 策略并一键下发，驱动从单点汇报转向直达总部的标准化运营。</p>
           </div>
         </div>
         <div class="arch-connector">↓</div>
         <div class="arch-layer" data-layer="city">
           <div class="arch-layer__head">
-            <span class="arch-layer__name">城市经理</span>
-            <span class="arch-layer__tag">城市提效率</span>
+            <span class="arch-layer__name" data-i18n="agent.archCityName">城市经理</span>
+            <span class="arch-layer__tag" data-i18n="agent.archCityTag">城市提效率</span>
             <button class="expand-btn" aria-expanded="false">+</button>
           </div>
           <div class="layer-detail" hidden>
-            <p>城市经理承接总部策略，拆解到本城市合作商与 BD：看城市级渗透率 / 收入结构，
+            <p data-i18n="agent.archCityDesc">城市经理承接总部策略，拆解到本城市合作商与 BD：看城市级渗透率 / 收入结构，
             定位低效合作商，把策略翻译成可执行的运营动作。</p>
           </div>
         </div>
         <div class="arch-connector">↓</div>
         <div class="arch-layer" data-layer="sales">
           <div class="arch-layer__head">
-            <span class="arch-layer__name">销售执行台</span>
-            <span class="arch-layer__tag">BD 给策略</span>
+            <span class="arch-layer__name" data-i18n="agent.archSalesName">销售执行台</span>
+            <span class="arch-layer__tag" data-i18n="agent.archSalesTag">BD 给策略</span>
             <button class="expand-btn" aria-expanded="false">+</button>
           </div>
           <div class="layer-detail" hidden>
-            <p>销售执行台是 BD 一线工作台：接收总部下发的策略与推荐，结合合作商实时数据给出具体动作
+            <p data-i18n="agent.archSalesDesc">销售执行台是 BD 一线工作台：接收总部下发的策略与推荐，结合合作商实时数据给出具体动作
             （如某合作商该推哪类广告产品、预算怎么配），并回流执行结果。</p>
           </div>
         </div>
@@ -440,45 +443,45 @@
 
     <!-- ============ 自动化与项目 ============ -->
     <section id="projects" class="section reveal">
-      <h2 class="section__title">自动化与项目</h2>
+      <h2 class="section__title" data-i18n="auto.title">自动化与项目</h2>
       <div class="grid">
         <article class="card project-card">
           <header class="project-card__head">
-            <h3 class="card__title">企微自动化通知</h3>
+            <h3 class="card__title" data-i18n="auto.c1title">企微自动化通知</h3>
             <button class="expand-btn" aria-expanded="false">深入了解 ↕</button>
           </header>
-          <p class="card__desc">通过企微 Webhook 把数据异常与日报自动推送到运营群，降低人工同步成本。</p>
+          <p class="card__desc" data-i18n="auto.c1desc">通过企微 Webhook 把数据异常与日报自动推送到运营群，降低人工同步成本。</p>
           <div class="project-detail" hidden>
-            <h5>技术细节</h5>
+            <h5 data-i18n="auto.c1detailH">技术细节</h5>
             <ul>
-              <li>Python 定时任务 + 企微机器人 Webhook 推送。</li>
-              <li>监控 MTD 收入 / 货币化率异常，触发预警卡片并 @ 对应负责人。</li>
-              <li>支持日报 / 周报自动生成与群内播报。</li>
+              <li data-i18n="auto.c1li1">Python 定时任务 + 企微机器人 Webhook 推送。</li>
+              <li data-i18n="auto.c1li2">监控 MTD 收入 / 货币化率异常，触发预警卡片并 @ 对应负责人。</li>
+              <li data-i18n="auto.c1li3">支持日报 / 周报自动生成与群内播报。</li>
             </ul>
           </div>
         </article>
         <article class="card">
-          <h3 class="card__title">下沉市场广告策略看板</h3>
-          <p class="card__desc">基于 Python + SQL 的收入 / 货币化率自动监控看板，支撑周报与月度复盘。</p>
+          <h3 class="card__title" data-i18n="auto.c2title">下沉市场广告策略看板</h3>
+          <p class="card__desc" data-i18n="auto.c2desc">基于 Python + SQL 的收入 / 货币化率自动监控看板，支撑周报与月度复盘。</p>
         </article>
         <article class="card">
-          <h3 class="card__title">教育政策周报体系</h3>
-          <p class="card__desc">追踪北京海淀 K12 特殊招生项目，结构化输出政策动态与招生信息周报。</p>
+          <h3 class="card__title" data-i18n="auto.c3title">教育政策周报体系</h3>
+          <p class="card__desc" data-i18n="auto.c3desc">追踪北京海淀 K12 特殊招生项目，结构化输出政策动态与招生信息周报。</p>
         </article>
       </div>
     </section>
 
     <!-- ============ 教育经历 ============ -->
     <section id="education" class="section reveal">
-      <h2 class="section__title">教育经历</h2>
+      <h2 class="section__title" data-i18n="edu.title">教育经历</h2>
       <ul class="timeline">
         <li class="timeline__item">
           <div class="timeline__meta">
             <span class="timeline__date">2025.09 — 2027.06</span>
-            <span class="timeline__org">北京理工大学（保研）</span>
+            <span class="timeline__org" data-i18n="edu.bit.org">北京理工大学（保研）</span>
           </div>
-          <h3 class="timeline__role">管理科学与工程 · 硕士</h3>
-          <p class="timeline__desc">
+          <h3 class="timeline__role" data-i18n="edu.bit.role">管理科学与工程 · 硕士</h3>
+          <p class="timeline__desc" data-i18n="edu.bit.desc">
             主修：复杂系统建模与仿真、博弈论与拍卖机制设计、风险分析与危机管理、运筹学。<br />
             荣誉：学业特等奖学金、小米特等奖学金、优秀学生干部、连续四年专业奖学金、学风标兵、三好学生。<br />
             技能：SQL / Python（数据分析）、LLM 落地（Agent 编排 / 自动化工作流）、ArcGIS / Origin / Stata（科研可视化）。
@@ -487,10 +490,10 @@
         <li class="timeline__item">
           <div class="timeline__meta">
             <span class="timeline__date">2021.09 — 2025.06</span>
-            <span class="timeline__org">中国地质大学（北京）</span>
+            <span class="timeline__org" data-i18n="edu.cugb.org">中国地质大学（北京）</span>
           </div>
-          <h3 class="timeline__role">经济学 · 本科</h3>
-          <p class="timeline__desc">
+          <h3 class="timeline__role" data-i18n="edu.cugb.role">经济学 · 本科</h3>
+          <p class="timeline__desc" data-i18n="edu.cugb.desc">
             GPA 3.83 / 4.00（班级第一、专业第三）。<br />
             证书：CET-4、CET-6（488）、雅思 6.5。<br />
             竞赛：全国大学生数学竞赛国家级一等奖、全国高校商业精英挑战赛国家级三等奖、
@@ -503,12 +506,12 @@
     <!-- ============ 科研 ============ -->
     <section id="research" class="section reveal">
       <div class="chapter">
-        <span class="chapter__kicker">CHAPTER 04 / 科研沉淀</span>
-        <h2 class="chapter__title">
+        <span class="chapter__kicker" data-i18n="research.kicker">CHAPTER 04 / 科研沉淀</span>
+        <h2 class="chapter__title" data-i18n="research.title">
           如何把本科训练，<br />
           变成可量化的研究能力？
         </h2>
-        <p class="chapter__lead">
+        <p class="chapter__lead" data-i18n="research.lead">
           从国创项目到 SCI 一区一作：把经济、能源、环境、公共健康几个问题串起来，
           训练的是"把复杂变量拆清楚，再量化它们之间关系"的能力。
         </p>
@@ -518,11 +521,11 @@
       <div class="research-tabs" role="tablist" aria-label="论文切换">
         <button class="research-tab is-active" role="tab" aria-selected="true" data-tab="paper1">
           <span class="research-tab__num">01</span>
-          <span class="research-tab__name">PM2.5 煤消费排放</span>
+          <span class="research-tab__name" data-i18n="research.tab1">PM2.5 煤消费排放</span>
         </button>
         <button class="research-tab" role="tab" aria-selected="false" data-tab="paper2">
           <span class="research-tab__num">02</span>
-          <span class="research-tab__name">ESEE 协调发展与公共健康</span>
+          <span class="research-tab__name" data-i18n="research.tab2">ESEE 协调发展与公共健康</span>
         </button>
       </div>
 
@@ -530,55 +533,55 @@
       <article class="research-case is-active" data-case="paper1">
         <div class="case-card">
           <div class="case-card__meta">
-            <span class="case-card__badge">SCI 一区 · 第一作者</span>
-            <span class="case-card__journal">Science of the Total Environment</span>
+            <span class="case-card__badge" data-i18n="paper1.badge">SCI 一区 · 第一作者</span>
+            <span class="case-card__journal" data-i18n="paper1.journal">Science of the Total Environment</span>
           </div>
-          <h3 class="case-card__title">
+          <h3 class="case-card__title" data-i18n="paper1.title">
             中原城市群煤消费 PM2.5 排放的<br />时空分异与影响因素
           </h3>
 
           <div class="case-stats">
             <div class="case-stat">
               <strong>8.2</strong>
-              <span>影响因子 · 中科院一区 Top</span>
+              <span data-i18n="paper1.stat1">影响因子 · 中科院一区 Top</span>
             </div>
             <div class="case-stat">
               <strong>30</strong>
-              <span>地级市</span>
+              <span data-i18n="paper1.stat2">地级市</span>
             </div>
             <div class="case-stat">
               <strong>21</strong>
-              <span>年面板数据</span>
+              <span data-i18n="paper1.stat3">年面板数据</span>
             </div>
           </div>
 
           <div class="case-flow">
             <div class="case-step">
               <span class="case-step__num">01</span>
-              <span class="case-step__name">问题</span>
-              <p>中原城市群快速发展伴随严重空气污染，煤消费 PM2.5 排放的时空分异与影响因素尚不明晰。</p>
+              <span class="case-step__name" data-i18n="paper1.step1n">问题</span>
+              <p data-i18n="paper1.step1">中原城市群快速发展伴随严重空气污染，煤消费 PM2.5 排放的时空分异与影响因素尚不明晰。</p>
             </div>
             <div class="case-step">
               <span class="case-step__num">02</span>
-              <span class="case-step__name">数据</span>
-              <p>基于煤炭消费数据与排放因子，核算 30 个地级市 2000–2020 年 PM2.5 排放量。</p>
+              <span class="case-step__name" data-i18n="paper1.step2n">数据</span>
+              <p data-i18n="paper1.step2">基于煤炭消费数据与排放因子，核算 30 个地级市 2000–2020 年 PM2.5 排放量。</p>
             </div>
             <div class="case-step">
               <span class="case-step__num">03</span>
-              <span class="case-step__name">方法</span>
-              <p>空间自相关（Moran's I）检验集聚效应 → 空间杜宾模型（SDM）量化直接效应与溢出效应。</p>
+              <span class="case-step__name" data-i18n="paper1.step3n">方法</span>
+              <p data-i18n="paper1.step3">空间自相关（Moran's I）检验集聚效应 → 空间杜宾模型（SDM）量化直接效应与溢出效应。</p>
             </div>
             <div class="case-step">
               <span class="case-step__num">04</span>
-              <span class="case-step__name">结论</span>
-              <p>煤消费 PM2.5 排放呈显著空间集聚与强溢出效应；多数因素存在直接或间接影响。</p>
+              <span class="case-step__name" data-i18n="paper1.step4n">结论</span>
+              <p data-i18n="paper1.step4">煤消费 PM2.5 排放呈显著空间集聚与强溢出效应；多数因素存在直接或间接影响。</p>
             </div>
           </div>
 
-          <p class="case-card__value">
+          <p class="case-card__value" data-i18n="paper1.value">
             <strong>价值：</strong>为城市间联防联控、产业绿色转型与环境治理技术发展提供量化依据。
           </p>
-          <a class="case-link" href="https://doi.org/10.1016/j.scitotenv.2024.173778" target="_blank" rel="noopener">
+          <a class="case-link" href="https://doi.org/10.1016/j.scitotenv.2024.173778" target="_blank" rel="noopener" data-i18n="paper1.link">
             阅读原文 ↗ <span class="case-link__doi">doi.org/10.1016/j.scitotenv.2024.173778</span>
           </a>
         </div>
@@ -588,55 +591,55 @@
       <article class="research-case" data-case="paper2" hidden>
         <div class="case-card">
           <div class="case-card__meta">
-            <span class="case-card__badge">SCI 一区 · 合作作者</span>
-            <span class="case-card__journal">Journal of Cleaner Production</span>
+            <span class="case-card__badge" data-i18n="paper2.badge">SCI 一区 · 合作作者</span>
+            <span class="case-card__journal" data-i18n="paper2.journal">Journal of Cleaner Production</span>
           </div>
-          <h3 class="case-card__title">
+          <h3 class="case-card__title" data-i18n="paper2.title">
             中国城市经济-社会-能源-环境协调发展<br />对公共健康的空间影响
           </h3>
 
           <div class="case-stats">
             <div class="case-stat">
               <strong>JCP</strong>
-              <span>清洁生产顶刊 · 中科院一区 Top</span>
+              <span data-i18n="paper2.stat1">清洁生产顶刊 · 中科院一区 Top</span>
             </div>
             <div class="case-stat">
               <strong>278</strong>
-              <span>个地级市</span>
+              <span data-i18n="paper2.stat2">个地级市</span>
             </div>
             <div class="case-stat">
               <strong>10</strong>
-              <span>年面板数据</span>
+              <span data-i18n="paper2.stat3">年面板数据</span>
             </div>
           </div>
 
           <div class="case-flow">
             <div class="case-step">
               <span class="case-step__num">01</span>
-              <span class="case-step__name">问题</span>
-              <p>经济、社会、能源、环境四个系统如何协同，并通过空间溢出影响公共健康？</p>
+              <span class="case-step__name" data-i18n="paper2.step1n">问题</span>
+              <p data-i18n="paper2.step1">经济、社会、能源、环境四个系统如何协同，并通过空间溢出影响公共健康？</p>
             </div>
             <div class="case-step">
               <span class="case-step__num">02</span>
-              <span class="case-step__name">数据</span>
-              <p>主成分分析 + 熵权法测度 278 个中国城市 2012–2021 年 ESEE 发展水平。</p>
+              <span class="case-step__name" data-i18n="paper2.step2n">数据</span>
+              <p data-i18n="paper2.step2">主成分分析 + 熵权法测度 278 个中国城市 2012–2021 年 ESEE 发展水平。</p>
             </div>
             <div class="case-step">
               <span class="case-step__num">03</span>
-              <span class="case-step__name">方法</span>
-              <p>耦合协调度模型量化四系统协调度 → 空间杜宾模型估计对本地与周边公共健康的影响。</p>
+              <span class="case-step__name" data-i18n="paper2.step3n">方法</span>
+              <p data-i18n="paper2.step3">耦合协调度模型量化四系统协调度 → 空间杜宾模型估计对本地与周边公共健康的影响。</p>
             </div>
             <div class="case-step">
               <span class="case-step__num">04</span>
-              <span class="case-step__name">结论</span>
-              <p>ESEE 协调发展对本地公共健康正向效应 0.5082，对周边地区 2.0240，小城市更显著。</p>
+              <span class="case-step__name" data-i18n="paper2.step4n">结论</span>
+              <p data-i18n="paper2.step4">ESEE 协调发展对本地公共健康正向效应 0.5082，对周边地区 2.0240，小城市更显著。</p>
             </div>
           </div>
 
-          <p class="case-card__value">
+          <p class="case-card__value" data-i18n="paper2.value">
             <strong>价值：</strong>为区域合作、平衡发展差距与提升公共健康提供政策参考。
           </p>
-          <a class="case-link" href="https://doi.org/10.1016/j.jclepro.2024.143442" target="_blank" rel="noopener">
+          <a class="case-link" href="https://doi.org/10.1016/j.jclepro.2024.143442" target="_blank" rel="noopener" data-i18n="paper2.link">
             阅读原文 ↗ <span class="case-link__doi">doi.org/10.1016/j.jclepro.2024.143442</span>
           </a>
         </div>
@@ -646,34 +649,34 @@
       <div class="research-grid">
         <div class="research-mini">
           <span class="research-mini__num">03</span>
-          <h4>方法体系</h4>
-          <p>排放测算、空间自相关、空间杜宾模型、耦合协调度、PCA / 熵权法。</p>
+          <h4 data-i18n="research.mini1n">方法体系</h4>
+          <p data-i18n="research.mini1">排放测算、空间自相关、空间杜宾模型、耦合协调度、PCA / 熵权法。</p>
         </div>
         <div class="research-mini">
           <span class="research-mini__num">04</span>
-          <h4>研究价值</h4>
-          <p>环境规制、联防联控、公共健康、区域差距平衡、绿色转型。</p>
+          <h4 data-i18n="research.mini2n">研究价值</h4>
+          <p data-i18n="research.mini2">环境规制、联防联控、公共健康、区域差距平衡、绿色转型。</p>
         </div>
         <div class="research-mini">
           <span class="research-mini__num">05</span>
-          <h4>学术训练</h4>
-          <p>长面板数据清洗、因果识别、ArcGIS / Origin 可视化、SCI 论文写作。</p>
+          <h4 data-i18n="research.mini3n">学术训练</h4>
+          <p data-i18n="research.mini3">长面板数据清洗、因果识别、ArcGIS / Origin 可视化、SCI 论文写作。</p>
         </div>
       </div>
     </section>
 
     <!-- ============ 技能 ============ -->
     <section id="skills" class="section reveal">
-      <h2 class="section__title">技能</h2>
+      <h2 class="section__title" data-i18n="skills.title">技能</h2>
       <div class="tags">
-        <span class="tag">SQL / Python（数据分析）</span>
-        <span class="tag">LLM 落地（Agent 编排）</span>
-        <span class="tag">ArcGIS / Origin / Stata</span>
-        <span class="tag">广告策略运营</span>
-        <span class="tag">GEO 广告商业化</span>
-        <span class="tag">数据建模与预测</span>
-        <span class="tag">CRM 数据监控</span>
-        <span class="tag">博弈论与运筹</span>
+        <span class="tag" data-i18n="skills.tag1">SQL / Python（数据分析）</span>
+        <span class="tag" data-i18n="skills.tag2">LLM 落地（Agent 编排）</span>
+        <span class="tag" data-i18n="skills.tag3">ArcGIS / Origin / Stata</span>
+        <span class="tag" data-i18n="skills.tag4">广告策略运营</span>
+        <span class="tag" data-i18n="skills.tag5">GEO 广告商业化</span>
+        <span class="tag" data-i18n="skills.tag6">数据建模与预测</span>
+        <span class="tag" data-i18n="skills.tag7">CRM 数据监控</span>
+        <span class="tag" data-i18n="skills.tag8">博弈论与运筹</span>
       </div>
     </section>
 
@@ -681,8 +684,8 @@
     <section id="contact" class="section reveal">
       <div class="contact-wrap">
         <div class="contact-main">
-          <h2 class="section__title">联系我</h2>
-          <p class="section__lead contact-summary">
+          <h2 class="section__title" data-i18n="contact.title">联系我</h2>
+          <p class="section__lead contact-summary" data-i18n="contact.summary">
             在美团，我习惯把"把事情做出来"往前再推一步——透过业务流程与分析，搭建自上而下的全链路视角，
             沉淀出<b>可精准提效、低错误率</b>的 AI Agent 自动化体系。<br />
             如果你正在做广告策略、数据体系、LLM 落地或增长相关的事，我很乐意聊。
@@ -690,50 +693,50 @@
 
           <div class="contact-strengths">
             <div class="strength-card">
-              <span class="strength-card__tag">数据驱动</span>
-              <p>SQL / Python 处理亿级数据，把业务拆成可量化指标体系，先看清结构再谈优化。</p>
+              <span class="strength-card__tag" data-i18n="contact.strength1tag">数据驱动</span>
+              <p data-i18n="contact.strength1">SQL / Python 处理亿级数据，把业务拆成可量化指标体系，先看清结构再谈优化。</p>
             </div>
             <div class="strength-card">
-              <span class="strength-card__tag">商业化落地</span>
-              <p>从 GEO 商业化 0→1 到广告策略提效，结果导向，能把手感翻译成可复制的打法。</p>
+              <span class="strength-card__tag" data-i18n="contact.strength2tag">商业化落地</span>
+              <p data-i18n="contact.strength2">从 GEO 商业化 0→1 到广告策略提效，结果导向，能把手感翻译成可复制的打法。</p>
             </div>
             <div class="strength-card">
-              <span class="strength-card__tag">LLM · Agent</span>
-              <p>独立编排 LLM Agent 与自动化工作流，把经营诊断、策略推荐做成标准化 AI 流程。</p>
+              <span class="strength-card__tag" data-i18n="contact.strength3tag">LLM · Agent</span>
+              <p data-i18n="contact.strength3">独立编排 LLM Agent 与自动化工作流，把经营诊断、策略推荐做成标准化 AI 流程。</p>
             </div>
           </div>
 
           <div class="contact-welcome">
-            <p class="contact-welcome__lead">欢迎就以下方向与我交流：</p>
+            <p class="contact-welcome__lead" data-i18n="contact.welcomeLead">欢迎就以下方向与我交流：</p>
             <div class="welcome-tags">
-              <span class="welcome-tag">产品</span>
-              <span class="welcome-tag">运营</span>
-              <span class="welcome-tag">商业化</span>
-              <span class="welcome-tag">市场</span>
-              <span class="welcome-tag">数据分析</span>
-              <span class="welcome-tag">LLM 落地</span>
-              <span class="welcome-tag">广告策略</span>
-              <span class="welcome-tag">合作机会</span>
+              <span class="welcome-tag" data-i18n="contact.tag1">产品</span>
+              <span class="welcome-tag" data-i18n="contact.tag2">运营</span>
+              <span class="welcome-tag" data-i18n="contact.tag3">商业化</span>
+              <span class="welcome-tag" data-i18n="contact.tag4">市场</span>
+              <span class="welcome-tag" data-i18n="contact.tag5">数据分析</span>
+              <span class="welcome-tag" data-i18n="contact.tag6">LLM 落地</span>
+              <span class="welcome-tag" data-i18n="contact.tag7">广告策略</span>
+              <span class="welcome-tag" data-i18n="contact.tag8">合作机会</span>
             </div>
           </div>
 
           <ul class="contact-list">
-            <li><span>邮箱</span> <a href="mailto:bit_yfj@163.com">bit_yfj@163.com</a></li>
-            <li><span>现居</span> 北京</li>
+            <li><span data-i18n="contact.emailLabel">邮箱</span> <a href="mailto:bit_yfj@163.com">bit_yfj@163.com</a></li>
+            <li><span data-i18n="contact.locationLabel">现居</span> <span data-i18n="contact.location">北京</span></li>
           </ul>
-          <a class="btn btn--primary" href="mailto:bit_yfj@163.com">发送邮件</a>
+          <a class="btn btn--primary" href="mailto:bit_yfj@163.com" data-i18n="contact.sendBtn">发送邮件</a>
         </div>
 
         <figure class="contact-photo">
           <img src="assets/life.jpg" alt="杨富杰生活照" class="contact-photo__img" />
-          <figcaption class="contact-photo__cap">保持好奇，也保持远行。</figcaption>
+          <figcaption class="contact-photo__cap" data-i18n="contact.caption">保持好奇，也保持远行。</figcaption>
         </figure>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© <span id="year"></span> 杨富杰 · 纯静态 HTML/CSS/JS 构建 · 含视角切换与深耕交互</p>
+    <p>© <span id="year"></span> <span data-i18n="footer">杨富杰 · 纯静态 HTML/CSS/JS 构建 · 含视角切换与深耕交互</span></p>
   </footer>
 
   <script src="script.js"></script>
