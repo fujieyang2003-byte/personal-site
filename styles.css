@@ -214,6 +214,17 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 }
 .timeline__meta { display: flex; gap: 12px; flex-wrap: wrap; color: var(--text-soft); font-size: 14px; }
 .timeline__org { font-weight: 600; color: var(--text); }
+.org-link {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
+  transition: color .2s, text-decoration-color .2s;
+}
+.org-link:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
 .timeline__role { font-size: 18px; margin: 6px 0 4px; }
 .timeline__desc { color: var(--text-soft); }
 

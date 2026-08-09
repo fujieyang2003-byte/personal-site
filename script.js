@@ -38,6 +38,12 @@ const I18N = {
     "about.genSummary": "✨ Generate My Resume Summary",
 
     "exp.title": "Work Experience",
+
+    "meituan.date": "2026.05 — Present",
+    "meituan.link": "Meituan",
+    "meituan.orgSuffix": " · Core Local Commerce - Sinking Markets",
+    "meituan.role": "Ad Strategy Ops",
+
     "view.recruiter": "Recruiter",
     "view.product": "Product Ops",
     "view.tech": "Tech Partner",
@@ -85,10 +91,14 @@ const I18N = {
     "p.bridge.li2": "<strong>Permission boundaries:</strong> tier-based data granularity & functions, avoiding over-access and metric drift.",
     "p.bridge.li3": "<strong>AI strategy delivery:</strong> HQ generates strategy, city managers break it down, sales desk executes and feeds results back.",
 
-    "wps.org": "Kingsoft Office (WPS) · Marketing Mgmt Center",
+    "wps.date": "2025.09 — 2025.12",
+    "wps.link": "Kingsoft Office (WPS)",
+    "wps.orgSuffix": " · Marketing Mgmt Center",
     "wps.role": "Data Strategy Ops",
     "wps.desc": "<strong>Healthcare industry research:</strong> independently led the 2026 healthcare office-software market review & forecast, building a \"province – industry value-tier\" model.<br /><strong>Market analysis:</strong> led B / G year-end conservative & sprint forecasts, computed three-year B-end market growth and competitor share.<br /><strong>Cyclic monitoring:</strong> built a CRM weekly / monthly / quarterly tracking system; flagged 45 anomaly records worth &gt; ¥1M.",
-    "shuidi.org": "Waterdrop Inc. · IT Internal Control",
+    "shuidi.date": "2024.10 — 2025.02",
+    "shuidi.link": "Waterdrop Inc.",
+    "shuidi.orgSuffix": " · IT Internal Control",
     "shuidi.role": "Financial Data Analysis",
     "shuidi.desc": "Supported Deloitte on the US-listed financial annual audit, processing 100M+ rows of \"Shui Di Chou\" / \"Shui Di Bao\" 2024 data; used SQL to extract time-phased policy data and 300+ anomaly records, classified and attributed them against business rules, identified 6 high-growth periods and 4 risk points, supporting the 2025 strategy adjustment.",
 
