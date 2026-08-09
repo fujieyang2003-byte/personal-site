@@ -29,6 +29,7 @@ const I18N = {
     "hero.btnExperience": "View Experience",
     "hero.btnAgent": "AI Agent Build",
     "hero.scrollHint": "Scroll down, or switch perspectives to dive deeper ↓",
+    "hero.maimai": "Maimai",
 
     "about.title": "About Me",
     "about.lead": "Click the planet to unlock my capability radar and AI resume summary.",
