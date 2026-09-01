@@ -236,9 +236,19 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
   border: 1px solid var(--border); border-radius: var(--radius);
   background: var(--bg-soft); padding: 14px 18px;
 }
-.arch-layer__head { display: flex; align-items: center; gap: 12px; }
+.arch-layer__head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .arch-layer__name { font-weight: 700; font-size: 17px; }
 .arch-layer__tag { color: var(--accent); font-size: 13px; font-weight: 600; margin-left: 2px; }
+.arch-layer__roles {
+  font-size: 12.5px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-weight: 500;
+  letter-spacing: .2px;
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+}
 .arch-layer .expand-btn { margin-left: auto; }
 /* （layer-detail 样式统一由 .detail-inner 提供，见上方深耕展开规则） */
 .arch-connector { color: var(--text-soft); font-size: 18px; line-height: 1.2; padding: 2px 0; }

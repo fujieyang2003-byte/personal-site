@@ -409,42 +409,42 @@
         </div>
       </div>
 
-      <!-- 三层架构：折叠为补充信息 -->
+      <!-- 三层架构：后线 → 前线 → 渠道（点击展开） -->
       <h3 class="block-subtitle" style="margin-top:42px" data-i18n="agent.archSubtitle">三层产品架构（点击展开）</h3>
       <div class="agent-arch">
         <div class="arch-layer" data-layer="hq">
           <div class="arch-layer__head">
-            <span class="arch-layer__name" data-i18n="agent.archHQname">总部</span>
-            <span class="arch-layer__tag" data-i18n="agent.archHQtag">区域控全局</span>
+            <span class="arch-layer__name" data-i18n="agent.archHQname">后线</span>
+            <span class="arch-layer__tag" data-i18n="agent.archHQtag">战略与策略</span>
+            <span class="arch-layer__roles" data-i18n="agent.archHQroles">产品运营 → 销售运营</span>
             <button class="expand-btn" aria-expanded="false">+</button>
           </div>
           <div class="layer-detail" hidden>
-            <p data-i18n="agent.archHQdesc">总部视角掌控全域经营大盘：监控各区域 MTD 收入、货币化率 MR、渗透率与 ARPU 的 YoY / MoM；
-            生成 AI 策略并一键下发，驱动从单点汇报转向直达总部的标准化运营。</p>
+            <p data-i18n="agent.archHQdesc">在自上而下的体系里，后线是策略与目标的"制定者"：产品运营输出广告业务策略与产品组合，销售运营把目标拆解为可执行任务、做目标测算与激励下发，并通过多维度经营分析把控大盘。多 Agent 在此完成目标激励、任务拆解、激励下发与经营分析的标准闭环。</p>
           </div>
         </div>
         <div class="arch-connector">↓</div>
         <div class="arch-layer" data-layer="city">
           <div class="arch-layer__head">
-            <span class="arch-layer__name" data-i18n="agent.archCityName">城市经理</span>
-            <span class="arch-layer__tag" data-i18n="agent.archCityTag">城市提效率</span>
+            <span class="arch-layer__name" data-i18n="agent.archCityName">前线</span>
+            <span class="arch-layer__tag" data-i18n="agent.archCityTag">区域经营与转化</span>
+            <span class="arch-layer__roles" data-i18n="agent.archCityRoles">广告业务经理 → 区域经理</span>
             <button class="expand-btn" aria-expanded="false">+</button>
           </div>
           <div class="layer-detail" hidden>
-            <p data-i18n="agent.archCityDesc">城市经理承接总部策略，拆解到本城市合作商与 BD：看城市级渗透率 / 收入结构，
-            定位低效合作商，把策略翻译成可执行的运营动作。</p>
+            <p data-i18n="agent.archCityDesc">前线是承上启下的"转化器"：广告业务经理把后线下发的策略转化为大区 / 业务线的销售节奏与资源投入，区域经理进一步把策略本地化到具体城市与渠道，完成目标拆解、城市适配与执行监控。多 Agent 在此为前线提供区域诊断、节奏建议与策略适配。</p>
           </div>
         </div>
         <div class="arch-connector">↓</div>
         <div class="arch-layer" data-layer="sales">
           <div class="arch-layer__head">
-            <span class="arch-layer__name" data-i18n="agent.archSalesName">销售执行台</span>
-            <span class="arch-layer__tag" data-i18n="agent.archSalesTag">BD 给策略</span>
+            <span class="arch-layer__name" data-i18n="agent.archSalesName">渠道</span>
+            <span class="arch-layer__tag" data-i18n="agent.archSalesTag">一线执行与回传</span>
+            <span class="arch-layer__roles" data-i18n="agent.archSalesRoles">总商 → 城市负责人 → BD / 运营</span>
             <button class="expand-btn" aria-expanded="false">+</button>
           </div>
           <div class="layer-detail" hidden>
-            <p data-i18n="agent.archSalesDesc">销售执行台是 BD 一线工作台：接收总部下发的策略与推荐，结合合作商实时数据给出具体动作
-            （如某合作商该推哪类广告产品、预算怎么配），并回流执行结果。</p>
+            <p data-i18n="agent.archSalesDesc">渠道是真正接触商家的"执行者"：总商把目标分到城市，城市负责人转化为 BD / 运营的具体动作（推广、广告搭建、回访），执行结果实时回流。多 Agent 在此完成商家画像、策略匹配与广告搭建建议，让一线动作有据可依、效果可量化。</p>
           </div>
         </div>
       </div>
