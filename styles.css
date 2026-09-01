@@ -936,6 +936,34 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
   margin-bottom: 36px;
 }
 
+.aiagent__controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 4px;
+}
+
+.demo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: filter .2s ease, transform .2s ease, box-shadow .2s ease;
+  box-shadow: 0 0 0 0 var(--accent-soft);
+}
+.demo-link:hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px -4px var(--accent);
+}
+
 .replay-btn {
   appearance: none;
   display: inline-flex;

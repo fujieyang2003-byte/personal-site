@@ -105,6 +105,7 @@ const I18N = {
 
     "agent.title": "AI Agent Build",
     "agent.lead": "Abstracting partner ad ops into an AI loop of \"data collection → diagnosis → strategy → feedback\", orchestrated via LLM Agents for L2 AI-ization.",
+    "agent.demo": "Live Demo ↗",
     "agent.node1": "Data Collection",
     "agent.node2": "Diagnosis",
     "agent.node3": "Strategy",
