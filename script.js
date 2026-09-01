@@ -571,29 +571,27 @@ document.addEventListener("DOMContentLoaded", function () {
       }, d);
     });
 
-    // 数据数字动画（仅首次滚动，后续周期保持最终值）
-    if (!numbersAnimated) {
-      setTimeout(function () {
-        if (!isPlaying) return;
-        metricBigs.forEach(function (el) {
-          animateNumber(el, parseFloat(el.dataset.target), 1200, "");
-        });
-        metricTos.forEach(function (el) {
-          if (el.dataset.textTo) {
-            el.textContent = el.dataset.textTo;
-          } else if (el.dataset.target) {
-            animateNumber(el, parseFloat(el.dataset.target), 1200, "%");
-          }
-        });
-        numbersAnimated = true;
-      }, 4200);
-    }
-
     // 一个周期约等于 6200ms，结束后若仍播放则再次启动
     cycleTimer = setTimeout(function () {
       if (!isPlaying) return;
       runCycle();
     }, 6600);
+  }
+
+  // 数据数字动画：仅首次滚动到 AI Agent 板块（进入视口）时触发一次
+  function animateMetricsOnce() {
+    if (numbersAnimated) return;
+    numbersAnimated = true;
+    metricBigs.forEach(function (el) {
+      animateNumber(el, parseFloat(el.dataset.target), 1200, "");
+    });
+    metricTos.forEach(function (el) {
+      if (el.dataset.textTo) {
+        el.textContent = el.dataset.textTo;
+      } else if (el.dataset.target) {
+        animateNumber(el, parseFloat(el.dataset.target), 1200, "%");
+      }
+    });
   }
 
   function runReplay() {
@@ -618,6 +616,24 @@ document.addEventListener("DOMContentLoaded", function () {
     replayBtn.addEventListener("click", function () {
       if (isPlaying) stopReplay(); else runReplay();
     });
+    // 回放默认开启
+    runReplay();
+  }
+
+  // 数字动画：首次滚动到 AI Agent 板块时触发
+  const agentSection = document.getElementById("ai-agent");
+  if (agentSection && "IntersectionObserver" in window) {
+    const metricIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateMetricsOnce();
+          metricIO.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
+    metricIO.observe(agentSection);
+  } else if (agentSection) {
+    animateMetricsOnce();
   }
 
   /* ---------- 10. 科研论文标签切换 ---------- */
